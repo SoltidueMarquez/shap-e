@@ -77,10 +77,10 @@ latents = sample_latents(
 # 解码潜变量为网格模型
 for i, latent in enumerate(latents):
     t = decode_latent_mesh(xm, latent).tri_mesh()
-    with open(f'mesh{i}.ply', 'wb') as f:
+    with open(f'mesh.ply', 'wb') as f:
         t.write_ply(f)
 
-print(f"3D model generated and saved as 'example_mesh_0.ply'")
+print(f"3D model generated and saved as 'mesh.ply'")
 
 # 清理缓存文件夹
 cache_folder = "shap_e_model_cache"  # 替换为实际的缓存文件夹路径
